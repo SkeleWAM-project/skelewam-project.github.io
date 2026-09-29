@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157b91">
+  <meta name="description" content="SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation. A compact world action model built on sparse 3D robot–object geometry.">
+  <meta property="og:title" content="SkeleWAM — Skeleton World-Action Modeling">
+  <meta property="og:description" content="Sparse 3D geometry for efficient robotic manipulation. Explore the method, multi-view visualizations, and results.">
+  <meta property="og:type" content="website">
+  <title>SkeleWAM | Skeleton World-Action Modeling</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23122333'/%3E%3Cpath d='M11 35L17 19L30 12L37 28' fill='none' stroke='%235cd5dc' stroke-width='3'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='11' cy='35' r='4'/%3E%3Ccircle cx='17' cy='19' r='4'/%3E%3Ccircle cx='30' cy='12' r='4'/%3E%3Ccircle cx='37' cy='28' r='4'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-skeleton" viewBox="0 0 32 32"><path d="m5 25 5-13 10-6 7 15"/><circle cx="5" cy="25" r="2.6"/><circle cx="10" cy="12" r="2.6"/><circle cx="20" cy="6" r="2.6"/><circle cx="27" cy="21" r="2.6"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8M8 16h6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8Zm0 10 9-5M12 13 3 8m9 5v9m-9-14 9 5 9-5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 6h12v12H3Zm12 4 6-4v12l-6-4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.8 7.2L22 12l-7.2 2.8L12 22l-2.8-7.2L2 12l7.2-2.8Z"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M3 3l6 6m12-6-6 6M3 21l6-6m12 6-6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+  </defs></svg>
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="#"><svg class="icon brand-icon"><use href="#i-skeleton"/></svg><span>Skele<span class="teal">WAM</span></span></a>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#method">Method</a><a href="#results">Results</a></div>
+      <a class="nav-paper" href="skelewam.pdf" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"/></svg> Paper <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero container">
+      <div class="eyebrow"><svg class="icon"><use href="#i-skeleton"/></svg> ROBOT LEARNING THROUGH GEOMETRY</div>
+      <h1>Skele<span>WAM</span></h1>
+      <p class="paper-title">Skeleton World-Action Modeling<br>for Efficient Robotic Manipulation</p>
+      <p class="authors">Juyi Sheng <span>·</span> Hua Wang <span>·</span> Mengyuan Liu</p>
+      <div class="affiliation"><img src="assets/images/pku.png" alt="Peking University emblem" width="180" height="180"><span>Peking University</span></div>
+      <div class="hero-actions"><a class="button button-dark" href="skelewam.pdf" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"/></svg> Read the paper</a><a class="button button-light" href="#demos"><svg class="icon"><use href="#i-play"/></svg> Explore the demos</a></div>
+      <p class="hero-summary">A world action model that learns to manipulate<br class="desktop-break"> through <strong>sparse 3D robot–object structure.</strong></p>
+      <figure class="hero-film">
+        <div class="film-topline"><span><svg class="icon"><use href="#i-camera"/></svg> FROM OBSERVATION TO SKELETON</span><span class="film-tag">Real-world visualization</span></div>
+        <video id="hero-video" controls autoplay muted loop playsinline preload="metadata" poster="assets/posters/2-2-front_2d3d-poster.jpg" aria-label="Recorded drawer interaction with its reconstructed 3D skeleton"><source src="assets/videos/2-2/front_2d3d.mp4" type="video/mp4"></video>
+        <figcaption><span>Keep the geometry. Learn the interaction.</span><span>RGB with landmarks <span aria-hidden="true">↔</span> 3D skeleton</span></figcaption>
+      </figure>
+      <div class="metrics" aria-label="Key results from the manuscript"><div><strong>85.9<span>%</span></strong><p>LIBERO-Plus success</p></div><div><strong>57.1<span>M</span></strong><p>Model parameters</p></div><div><strong>93.4<span>%</span></strong><p>Camera perturbation success</p></div><div><strong>89<span>%</span></strong><p>Real-world average success</p></div></div>
+      <p class="result-note">Results reported in the manuscript · RGB-D observation setting</p>
+    </section>
+    <section id="overview" class="section container">
+      <div class="section-heading"><span class="section-index">01 / THE IDEA</span><h2>A little structure goes a long way.</h2><p>Robot joints, object centers, and interaction points form a shared geometric language for action and prediction.</p></div>
+      <div class="overview-copy"><p>World action models combine action generation with future-state prediction. SkeleWAM represents the scene as a compact 3D skeleton, built online from RGB-D observations and robot proprioception. The skeleton makes the geometry of robot–object interactions explicit.</p><p>During training, the model learns actions and future skeletons together. At inference, it generates actions from the current skeleton and language instruction. Future prediction supports learning without requiring visual reconstruction.</p></div>
+      <figure class="paper-figure"><a href="assets/images/motivation_01.webp" target="_blank" rel="noopener" aria-label="Open the representation overview at full size"><img src="assets/images/motivation_01.webp" alt="Comparison of video, visual latent, dense 3D dynamics, and SkeleWAM's sparse skeleton representation." width="3200" height="1128" loading="lazy"></a><figcaption><span><strong>A compact state space.</strong> Explicit robot–object geometry connects perception, prediction, and control.</span><span class="zoom-hint"><svg class="icon"><use href="#i-expand"/></svg> Open figure</span></figcaption></figure>
+    </section>
+    <section id="demos" class="demo-band">
+      <div class="container">
+        <div class="section-heading"><span class="section-index">02 / SEE THE STRUCTURE</span><h2>Five tasks</h2><p>Explore recorded robot interactions and their skeleton visualizations, from multiple viewpoints.</p></div>
+        <div class="task-picker" role="group" aria-label="Choose a manipulation task">
+          <button class="task-card selected" type="button" data-task="2-2" aria-pressed="true"><span class="task-thumbnail"><img src="assets/posters/open_drawer-poster.jpg" alt="" width="1280" height="720" loading="lazy"><span class="task-number">01</span></span><span>Open drawer</span></button>
+          <button class="task-card" type="button" data-task="1-2" aria-pressed="false"><span class="task-thumbnail"><img src="assets/posters/close_drawer-poster.jpg" alt="" width="1280" height="720" loading="lazy"><span class="task-number">02</span></span><span>Close drawer</span></button>
+          <button class="task-card" type="button" data-task="3-2" aria-pressed="false"><span class="task-thumbnail"><img src="assets/posters/put_block_in_drawer-poster.jpg" alt="" width="1280" height="720" loading="lazy"><span class="task-number">03</span></span><span>Block in drawer</span></button>
+          <button class="task-card" type="button" data-task="4-2" aria-pressed="false"><span class="task-thumbnail"><img src="assets/posters/stack_blocks-poster.jpg" alt="" width="1280" height="720" loading="lazy"><span class="task-number">04</span></span><span>Stack blocks</span></button>
+          <button class="task-card" type="button" data-task="5-2" aria-pressed="false"><span class="task-thumbnail"><img src="assets/posters/stack_bowls-poster.jpg" alt="" width="1280" height="720" loading="lazy"><span class="task-number">05</span></span><span>Stack bowls</span></button>
+        </div>
+        <div class="demo-viewer">
+          <div class="viewer-toolbar"><div class="segmented" role="group" aria-label="Video representation"><button type="button" data-mode="skeleton" aria-pressed="true"><svg class="icon"><use href="#i-skeleton"/></svg> Skeleton view</button><button type="button" data-mode="rgb" aria-pressed="false"><svg class="icon"><use href="#i-camera"/></svg> RGB video</button></div><div id="camera-picker" class="camera-picker" role="group" aria-label="Camera viewpoint"><button type="button" data-view="front" aria-pressed="true">Front</button><button type="button" data-view="top" aria-pressed="false">Top</button><button type="button" data-view="wrist" aria-pressed="false">Wrist</button></div></div>
+          <div class="video-stage"><video id="demo-video" controls muted loop playsinline preload="none" poster="assets/posters/2-2-front_2d3d-poster.jpg" aria-label="Open drawer: front-view skeleton visualization"><source src="assets/videos/2-2/front_2d3d.mp4" type="video/mp4"></video><p id="video-error" class="video-error" hidden>Unable to load this video. <a id="video-direct" href="assets/videos/2-2/front_2d3d.mp4">Open the video file</a>.</p></div>
+          <div class="viewer-caption"><div><span class="instruction-label">LANGUAGE INSTRUCTION</span><p id="task-instruction" aria-live="polite">“Open drawer.”</p></div><span id="view-description">Front camera · RGB + reconstructed skeleton</span></div>
+        </div>
+        <p class="media-note">Skeleton views show reconstructions from recorded interactions. RGB clips are separate task recordings. Success rates below are the evaluation results reported in the manuscript.</p>
+      </div>
+    </section>
+    <section id="method" class="section container">
+      <div class="section-heading"><span class="section-index">03 / HOW IT WORKS</span><h2>Predict geometry. Generate action.</h2><p>Future skeletons provide geometric supervision during training. At inference, the model generates actions directly.</p></div>
+      <div class="method-steps"><article><span class="step-icon"><svg class="icon"><use href="#i-skeleton"/></svg></span><span class="step-count">01</span><h3>Build the skeleton</h3><p>Combine object landmarks from RGB-D perception with robot joints from forward kinematics, in a shared robot-centric frame.</p></article><article><span class="step-icon"><svg class="icon"><use href="#i-cube"/></svg></span><span class="step-count">02</span><h3>Learn future geometry</h3><p>Jointly train action generation and future skeleton prediction with flow matching, using the current skeleton and language context.</p></article><article><span class="step-icon"><svg class="icon"><use href="#i-spark"/></svg></span><span class="step-count">03</span><h3>Select and execute</h3><p>Medoid Action Consensus selects a representative sampled action chunk. Execute a prefix, update the skeleton, and replan.</p></article></div>
+      <figure class="paper-figure"><a href="assets/images/framework_01.webp" target="_blank" rel="noopener" aria-label="Open the SkeleWAM framework at full size"><img src="assets/images/framework_01.webp" alt="SkeleWAM framework: skeleton construction, language conditioning, world and action experts, future skeleton training, and Medoid Action Consensus." width="3200" height="1383" loading="lazy"></a><figcaption><span><strong>The SkeleWAM framework.</strong> The future-skeleton branch is removed at inference; MAC selects a complete trajectory without averaging candidates.</span><span class="zoom-hint"><svg class="icon"><use href="#i-expand"/></svg> Open figure</span></figcaption></figure>
+      <div class="method-insight"><svg class="icon"><use href="#i-spark"/></svg><p><strong>Learning the future helps the present.</strong> Adding future-skeleton supervision improves LIBERO-Plus success from 80.1% to 85.9%, with the same action-only inference procedure.<span>Table 3b, manuscript</span></p><strong class="insight-number">+5.8<span>percentage points</span></strong></div>
+    </section>
+    <section id="results" class="section container">
+      <div class="section-heading"><span class="section-index">04 / EXPERIMENTS</span><h2>Compact model. Robust manipulation.</h2><p>Zero-shot evaluation on 10,030 LIBERO-Plus variants across seven perturbation categories.</p></div>
+      <div class="result-highlights"><div><span class="mini-label">OVERALL SUCCESS</span><strong>85.9<span>%</span></strong><p><b>+3.7 points</b> over Cosmos-Policy</p></div><div><span class="mini-label">CAMERA PERTURBATIONS</span><strong>93.4<span>%</span></strong><p><b>+17.6 points</b> over Cosmos-Policy</p></div><div class="parameter-highlight"><span class="mini-label">MODEL SIZE</span><strong>57.1<span>M</span></strong><p>Parameters in the RGB-D setting</p></div></div>
+      <div class="table-title"><h3>LIBERO-Plus</h3><span>Success rate (%) · selected baselines</span></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="LIBERO-Plus benchmark comparison; scroll horizontally on small screens"><table><thead><tr><th scope="col">Method</th><th scope="col">Parameters</th><th scope="col">Overall ↑</th><th scope="col">Camera ↑</th><th scope="col">Layout ↑</th></tr></thead><tbody><tr><th scope="row">π<sub>0.5</sub></th><td>3.3B</td><td>79.7</td><td>70.6</td><td>84.1</td></tr><tr><th scope="row">VLA-JEPA</th><td>~2B</td><td>77.9</td><td>64.2</td><td>83.9</td></tr><tr><th scope="row">GE-Act</th><td>2.2B</td><td>80.3</td><td>60.7</td><td>80.2</td></tr><tr><th scope="row">Cosmos-Policy</th><td>2B</td><td>82.2</td><td>75.8</td><td>82.2</td></tr><tr class="ours"><th scope="row">SkeleWAM <span class="ours-badge">OURS</span></th><td>57.1M</td><td>85.9</td><td>93.4</td><td>66.6</td></tr></tbody></table></div>
+      <p class="table-note">Table 1, manuscript. SkeleWAM uses RGB-D observations. The separate sim-state reference uses privileged simulator coordinates and reaches 87.7% overall.</p>
+      <details class="full-results"><summary>Results across all seven perturbation categories <span aria-hidden="true">+</span></summary><div class="table-scroll" tabindex="0" role="region" aria-label="Success rates across all perturbation categories"><table><thead><tr><th scope="col">Method</th><th scope="col">Camera</th><th scope="col">Robot</th><th scope="col">Language</th><th scope="col">Light</th><th scope="col">Background</th><th scope="col">Noise</th><th scope="col">Layout</th></tr></thead><tbody><tr><th scope="row">Cosmos-Policy</th><td>75.8</td><td>63.3</td><td>81.7</td><td>96.5</td><td>88.9</td><td>92.7</td><td>82.2</td></tr><tr class="ours"><th scope="row">SkeleWAM</th><td>93.4</td><td>71.9</td><td>89.1</td><td>94.7</td><td>96.0</td><td>93.9</td><td>66.6</td></tr></tbody></table></div></details>
+      <p class="limitation"><strong>Where there is room to improve.</strong> Layout changes remain challenging: SkeleWAM reaches 66.6% compared with 84.1% for π<sub>0.5</sub>. Sparse geometry alone does not resolve generalization to substantially different spatial arrangements.</p>
+      <div class="realworld-heading"><div><span class="section-index">BEYOND SIMULATION</span><h3>On the real robot.</h3><p>An ARX R5 with external and wrist-mounted RealSense cameras. Five tasks, 20 trials per task, for each method.</p></div><div class="realworld-stat"><strong>89<span>%</span></strong><p>Mean success across five tasks</p></div></div>
+      <figure class="paper-figure"><a href="assets/images/realworld_performance_01.webp" target="_blank" rel="noopener" aria-label="Open the real-world results figure at full size"><img src="assets/images/realworld_performance_01.webp" alt="Representative successful rollouts for opening a drawer, placing a block in a drawer, and stacking bowls, with early, interaction, late, and skeleton views." width="3200" height="1596" loading="lazy"></a><figcaption><span><strong>From contact to completion.</strong> Three representative tasks from the five-task real-world evaluation (Figure 3).</span><span class="zoom-hint"><svg class="icon"><use href="#i-expand"/></svg> Open figure</span></figcaption></figure>
+      <div class="table-title"><h3>Real-world success rates</h3><span>20 trials per task · success rate (%)</span></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Real-world benchmark results; scroll horizontally on small screens"><table class="realworld-table"><thead><tr><th scope="col">Method</th><th scope="col">Open<br>drawer</th><th scope="col">Close<br>drawer</th><th scope="col">Stack<br>blocks</th><th scope="col">Stack<br>bowls</th><th scope="col">Block in<br>drawer</th><th scope="col">Average ↑</th></tr></thead><tbody><tr><th scope="row">Fast-WAM</th><td>80</td><td>85</td><td>80</td><td>85</td><td>85</td><td>83</td></tr><tr><th scope="row">π<sub>0.5</sub></th><td>80</td><td>80</td><td>70</td><td>75</td><td>75</td><td>76</td></tr><tr><th scope="row">Cosmos-Policy</th><td>85</td><td>85</td><td>90</td><td>90</td><td>85</td><td>87</td></tr><tr class="ours"><th scope="row">SkeleWAM</th><td>80</td><td>90</td><td>90</td><td>95</td><td>90</td><td>89</td></tr></tbody></table></div>
+      <p class="table-note">Table 2, manuscript. The average is the unweighted mean across the five tasks.</p>
+      <details class="setup-details"><summary><svg class="icon"><use href="#i-camera"/></svg> View the experimental setup <span aria-hidden="true">+</span></summary><figure><img src="assets/images/setup_01.webp" alt="ARX R5 robotic arm in a tabletop workspace with external and wrist-mounted RealSense cameras, drawers, blocks, and bowls." width="2720" height="2049" loading="lazy"><figcaption>Figure 4. The real-world experimental setup.</figcaption></figure></details>
+    </section>
+    <section class="section container citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="citation-heading"><h2 id="citation-title">Citation</h2><button class="copy-button" id="copy-citation" type="button"><svg class="icon"><use href="#i-copy"/></svg><span>Copy BibTeX</span></button></div>
+      <pre class="citation"><code id="citation-text">@unpublished{sheng_skelewam,
+  title  = {SkeleWAM: Skeleton World-Action Modeling
+            for Efficient Robotic Manipulation},
+  author = {Sheng, Juyi and Wang, Hua and Liu, Mengyuan},
+  note   = {Manuscript}
+}</code></pre><p id="copy-status" class="copy-status" role="status"></p>
+    </section>
+  </main>
+  <footer class="site-footer container"><a class="brand" href="#"><svg class="icon brand-icon"><use href="#i-skeleton"/></svg>SkeleWAM</a><p>Juyi Sheng · Hua Wang · Mengyuan Liu<br><span class="footer-affiliation">Peking University</span></p><a href="skelewam.pdf" target="_blank" rel="noopener">Read the manuscript ↗</a></footer>
+</body>
+</html>
