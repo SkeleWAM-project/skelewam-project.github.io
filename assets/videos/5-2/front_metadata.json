@@ -1,0 +1,193 @@
+{
+  "task": "5-2",
+  "view": "front",
+  "frames": 698,
+  "paper_keyframe_comparisons": [
+    {
+      "frame": 117,
+      "object_max_difference_px": 2.898457019905882e-13,
+      "robot_max_difference_px": 10.282931378945968
+    },
+    {
+      "frame": 261,
+      "object_max_difference_px": 3.06111178766429e-13,
+      "robot_max_difference_px": 3.8106100216254752
+    },
+    {
+      "frame": 408,
+      "object_max_difference_px": 3.314512409159136e-13,
+      "robot_max_difference_px": 3.5865992167560425
+    },
+    {
+      "frame": 555,
+      "object_max_difference_px": 2.2914314707516465e-13,
+      "robot_max_difference_px": 0.03809563309860033
+    },
+    {
+      "frame": 697,
+      "object_max_difference_px": 2.5421149729252077e-13,
+      "robot_max_difference_px": 0.10914588453866772
+    }
+  ],
+  "robot_qpos_delay_seconds": 0.104,
+  "block_motion_model": null,
+  "bowl_gap_corrections": [
+    {
+      "start": 4,
+      "end": 5,
+      "before": 3,
+      "after": 6
+    },
+    {
+      "start": 9,
+      "end": 9,
+      "before": 8,
+      "after": 10
+    },
+    {
+      "start": 118,
+      "end": 118,
+      "before": 117,
+      "after": 119
+    },
+    {
+      "start": 157,
+      "end": 157,
+      "before": 156,
+      "after": 158
+    },
+    {
+      "start": 185,
+      "end": 185,
+      "before": 184,
+      "after": 186
+    },
+    {
+      "start": 189,
+      "end": 189,
+      "before": 188,
+      "after": 190
+    },
+    {
+      "start": 199,
+      "end": 199,
+      "before": 198,
+      "after": 200
+    },
+    {
+      "start": 203,
+      "end": 203,
+      "before": 202,
+      "after": 204
+    },
+    {
+      "start": 338,
+      "end": 339,
+      "before": 337,
+      "after": 340
+    },
+    {
+      "start": 393,
+      "end": 394,
+      "before": 392,
+      "after": 395
+    },
+    {
+      "start": 396,
+      "end": 396,
+      "before": 395,
+      "after": 397
+    },
+    {
+      "start": 406,
+      "end": 406,
+      "before": 405,
+      "after": 407
+    },
+    {
+      "start": 419,
+      "end": 419,
+      "before": 418,
+      "after": 420
+    },
+    {
+      "start": 439,
+      "end": 439,
+      "before": 438,
+      "after": 440
+    },
+    {
+      "start": 453,
+      "end": 454,
+      "before": 452,
+      "after": 455
+    },
+    {
+      "start": 464,
+      "end": 464,
+      "before": 463,
+      "after": 465
+    },
+    {
+      "start": 521,
+      "end": 521,
+      "before": 520,
+      "after": 522
+    },
+    {
+      "start": 532,
+      "end": 532,
+      "before": 531,
+      "after": 533
+    },
+    {
+      "start": 575,
+      "end": 575,
+      "before": 574,
+      "after": 576
+    }
+  ],
+  "full_frame_range": [
+    0,
+    697
+  ],
+  "stride": 1,
+  "source_hdf5": "/home/hri/log/Robotic_arm/src/Brain/record_demos/datasets/continuous/skelewam/5-2/replay_recorded/episode0_replay_20260922_231917.hdf5",
+  "object_source_counts": {
+    "fixed_top_marker_reference": 698,
+    "fixed_top_marker_reference+rim_offset": 698,
+    "occluded_tcp_estimate_conditioned_on_visible_endpoints": 46,
+    "top_aruco": 544,
+    "top_aruco+nested_contact_height": 131,
+    "top_aruco+nested_contact_height+rim_offset": 131,
+    "top_aruco+rim_offset": 544
+  },
+  "limitations": "Per-view depth-estimated skeleton. Reprojection consistency does not establish physical accuracy of hidden joints or object depths.",
+  "fps": 28.897005847311206,
+  "source_estimates": "/home/hri/log/Robotic_arm/src/Brain/SkeleWAM/visualize/deal1/output/5-2",
+  "source_replay_directory": "/home/hri/log/Robotic_arm/src/Brain/record_demos/datasets/continuous/skelewam/5-2/replay_recorded",
+  "source_rgb": "original HDF5 observations/images/front; verified against same-index replay_recorded MP4",
+  "timing_method": "Fixed per-view visual delay shared by all tasks, q(image_timestamp-delay) interpolated in timestamp space, then URDF FK; no calibration YAML changes",
+  "camera_parameter_source": "/home/hri/log/Robotic_arm/src/Brain/SkeleWAM/visualize/deal1/output/calibration_sample_review/front_calibration_audit.json",
+  "paper_manifest": "/home/hri/log/Robotic_arm/src/Brain/SkeleWAM/visualize/deal1/imgs/manifest.json",
+  "videos": {
+    "2d": "front_2d.mp4",
+    "3d": "front_3d.mp4",
+    "2d3d": "front_2d3d.mp4"
+  },
+  "video_sizes": {
+    "2d": [
+      640,
+      480
+    ],
+    "3d": [
+      1280,
+      960
+    ],
+    "2d3d": [
+      1280,
+      480
+    ]
+  },
+  "rendered_frames": 698
+}
