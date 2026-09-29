@@ -1,0 +1,95 @@
+{
+  "method": "rigid object-preview camera fit; original calibration retained",
+  "samples": 3,
+  "median_error_px": 0.0029382944001904747,
+  "p95_error_px": 0.0033920238751131765,
+  "T_base_camera": [
+    [
+      -0.9205477565421334,
+      -0.1341783072428654,
+      0.3668623853581667,
+      -0.12816595978047618
+    ],
+    [
+      -0.3781658457523226,
+      0.07076403979724855,
+      -0.9230292756884817,
+      0.9315926231557425
+    ],
+    [
+      0.09788984130988955,
+      -0.9884273531914279,
+      -0.11588333111932962,
+      0.45367646069240464
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "K": [
+    [
+      606.0810546875,
+      0.0,
+      327.5788879394531
+    ],
+    [
+      0.0,
+      605.1178588867188,
+      245.88775634765625
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "source_uv": [
+    [
+      225.0,
+      417.0
+    ],
+    [
+      289.0,
+      396.0
+    ],
+    [
+      225.0,
+      405.0
+    ]
+  ],
+  "source_xyz_base_m": [
+    [
+      0.3256292939186096,
+      0.1461031287908554,
+      0.06800000037997961
+    ],
+    [
+      0.2836122214794159,
+      0.006127368658781052,
+      0.06800000037997961
+    ],
+    [
+      0.3260872960090637,
+      0.14830781519412994,
+      0.08800000086426735
+    ]
+  ],
+  "fit_success": true,
+  "reference_kind": "inspected front bowl-mouth ellipse centres, not visible marker detections",
+  "reference_frames": [
+    0,
+    0,
+    697
+  ],
+  "nested_rise_estimate_m": 0.02,
+  "nested_contact": {
+    "status": "applied",
+    "settled_frame": 586,
+    "blend_start_frame": 566,
+    "height_m": 0.028,
+    "method": "stable white-body occlusion by receiving bowl; TOP marker ray and nested-height constraint"
+  }
+}

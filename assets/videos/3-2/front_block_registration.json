@@ -1,0 +1,34 @@
+{
+  "status": "accepted",
+  "samples": 22,
+  "frames": [
+    15,
+    27,
+    30,
+    36,
+    48,
+    66,
+    126,
+    135,
+    138,
+    141,
+    165,
+    168,
+    186,
+    204,
+    207,
+    210,
+    213,
+    216,
+    219,
+    225,
+    234,
+    237
+  ],
+  "offset_px": [
+    7.251623686304626,
+    63.89910666631786
+  ],
+  "median_deviation_px": 0.5692846366781377,
+  "method": "median front ArUco 10 observation minus projected top-derived 3D marker"
+}

@@ -1,0 +1,510 @@
+{
+  "task": "5-2",
+  "source_hdf5": "/home/hri/log/Robotic_arm/src/Brain/record_demos/datasets/continuous/skelewam/5-2/replay_recorded/episode0_replay_20260922_231917.hdf5",
+  "instruction": "stack bowls",
+  "roles": [
+    "teal_rim",
+    "teal_marker",
+    "white_rim",
+    "white_marker"
+  ],
+  "markers": [
+    12,
+    15
+  ],
+  "frames": 698,
+  "raw_aruco_counts": {
+    "12": 75,
+    "15": 690
+  },
+  "detection_sources": {
+    "template": 387,
+    "aruco": 765,
+    "flow": 243
+  },
+  "fill_counts": {
+    "aruco": 426,
+    "aruco+rim_offset": 426,
+    "aruco+rim_offset+tcp_height": 264,
+    "aruco+tcp_height": 264,
+    "fixed_anchor": 1394,
+    "flow+rim_offset+tcp_height": 1,
+    "flow+tcp_height": 1,
+    "template": 1,
+    "template+rim_offset": 1,
+    "template+rim_offset+tcp_height": 7,
+    "template+tcp_height": 7
+  },
+  "geometry_assumptions_m": {
+    "drawer_roof": 0.16,
+    "drawer_handle": 0.16,
+    "block_top": 0.04,
+    "block_center": 0.02,
+    "bowl_marker": 0.008,
+    "bowl_center": 0.038
+  },
+  "drawer_height_m": 0.165,
+  "block_size_assumption_m": null,
+  "bowl_height_assumption_m": 0.06,
+  "source_depth_available": false,
+  "original_episode_depth_available": true,
+  "marker_size_m": 0.03,
+  "block_3_2_side_m": 0.056,
+  "block_3_2_marker_z_m": 0.172,
+  "block_4_2_side_m": 0.055,
+  "block_4_2_marker_proxy_z_m": 0.055,
+  "bowl_marker_z_m": {
+    "12": 0.008,
+    "15": 0.008
+  },
+  "bowl_radius_m": 0.055,
+  "bowl_marker_to_rim_base_m": [
+    0.0,
+    -0.055,
+    0.06
+  ],
+  "position_method": "top interior marker rays and TCP occlusion fill; front bowl-mouth preview registration",
+  "initial_backfill_uses_future": false,
+  "training_ready": false,
+  "inferred_grasp_frames": 272,
+  "gripper_motor_range": [
+    -0.13523292541503906,
+    3.168726921081543
+  ],
+  "gripper_open_fraction": "clip((motor + 0.13) / 4.6, 0, 1); preview estimate",
+  "grasp_motor_threshold": 1.0,
+  "front_object_registration": {
+    "method": "rigid object-preview camera fit; original calibration retained",
+    "samples": 3,
+    "median_error_px": 0.0029382944001904747,
+    "p95_error_px": 0.0033920238751131765,
+    "T_base_camera": [
+      [
+        -0.9205477565421334,
+        -0.1341783072428654,
+        0.3668623853581667,
+        -0.12816595978047618
+      ],
+      [
+        -0.3781658457523226,
+        0.07076403979724855,
+        -0.9230292756884817,
+        0.9315926231557425
+      ],
+      [
+        0.09788984130988955,
+        -0.9884273531914279,
+        -0.11588333111932962,
+        0.45367646069240464
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "K": [
+      [
+        606.0810546875,
+        0.0,
+        327.5788879394531
+      ],
+      [
+        0.0,
+        605.1178588867188,
+        245.88775634765625
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_uv": [
+      [
+        225.0,
+        417.0
+      ],
+      [
+        289.0,
+        396.0
+      ],
+      [
+        225.0,
+        405.0
+      ]
+    ],
+    "source_xyz_base_m": [
+      [
+        0.3256292939186096,
+        0.1461031287908554,
+        0.06800000037997961
+      ],
+      [
+        0.2836122214794159,
+        0.006127368658781052,
+        0.06800000037997961
+      ],
+      [
+        0.3260872960090637,
+        0.14830781519412994,
+        0.08800000086426735
+      ]
+    ],
+    "fit_success": true,
+    "reference_kind": "inspected front bowl-mouth ellipse centres, not visible marker detections",
+    "reference_frames": [
+      0,
+      0,
+      697
+    ],
+    "nested_rise_estimate_m": 0.02,
+    "nested_contact": {
+      "status": "applied",
+      "settled_frame": 586,
+      "blend_start_frame": 566,
+      "height_m": 0.028,
+      "method": "stable white-body occlusion by receiving bowl; TOP marker ray and nested-height constraint"
+    }
+  },
+  "front_marker_visibility": "interior markers occluded by bowl walls; front points are 3D projections",
+  "nested_rise_estimate_m": 0.02,
+  "geometry_revision": "drawer_1-2_front_reference_side_marker_centres_and_bowl_projection",
+  "render_stride": 3,
+  "camera_calibration": {
+    "top": {
+      "source": "/home/hri/log/Robotic_arm/src/Cerebellum/calibration/results/eye_to_hand_top_20260919_231556_892978.yaml",
+      "K": [
+        [
+          431.51947021484375,
+          0.0,
+          311.3725280761719
+        ],
+        [
+          0.0,
+          430.9231262207031,
+          241.9923553466797
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        -0.05392823368310928,
+        0.053944069892168045,
+        -0.0002458607195876539,
+        0.0001836896553868428,
+        -0.017036978155374527
+      ],
+      "T_base_camera": [
+        [
+          0.9983089089753839,
+          -0.056950347140854556,
+          -0.01166105573756976,
+          0.4587495646732678
+        ],
+        [
+          -0.05676991525632261,
+          -0.9982706583824618,
+          0.01526005682941782,
+          0.14794580570647942
+        ],
+        [
+          -0.012509955322402944,
+          -0.01457225353825674,
+          -0.9998155582129375,
+          1.1402845471565608
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_tcp_camera": null,
+      "intrinsics_source": "CameraInfo YAML"
+    },
+    "front": {
+      "source": "/home/hri/log/Robotic_arm/src/Cerebellum/calibration/results/eye_to_hand_front_20260920_215202_484877.yaml; replay preview registration from six cabinet corners in 2-1/episode0, RMS 1.67 px",
+      "K": [
+        [
+          606.0810546875,
+          0.0,
+          327.5788879394531
+        ],
+        [
+          0.0,
+          605.1178588867188,
+          245.88775634765625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "T_base_camera": [
+        [
+          -0.99189625,
+          0.07611629,
+          0.10172579,
+          0.12142505
+        ],
+        [
+          -0.08357939,
+          0.21210743,
+          -0.97366571,
+          0.82058249
+        ],
+        [
+          -0.09568862,
+          -0.97427755,
+          -0.20402681,
+          0.42517965
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_tcp_camera": null,
+      "intrinsics_source": "CameraInfo YAML"
+    },
+    "wrist": {
+      "source": "/home/hri/log/Robotic_arm/src/Cerebellum/calibration/results/eye_in_hand_wrist_20260919_224200_973331.yaml",
+      "K": [
+        [
+          611.2746859489035,
+          0.0,
+          299.3115472332852
+        ],
+        [
+          0.0,
+          595.4049808222923,
+          239.88702918657916
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "T_base_camera": null,
+      "T_tcp_camera": [
+        [
+          -0.06754593553306987,
+          -0.557573783681871,
+          0.8273747774398519,
+          -0.05660014972632575
+        ],
+        [
+          -0.9949017264865535,
+          0.09988538228027238,
+          -0.013909171103920448,
+          0.035557347868669154
+        ],
+        [
+          -0.07488725677334394,
+          -0.824096102501042,
+          -0.5614779716209357,
+          0.12825665212727463
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_source": "saved replay drawer marker preview fit"
+    }
+  },
+  "robot_projection_registration": {
+    "mode": "original",
+    "status": "original_calibration_baseline",
+    "jaw_extra_travel_m": 0.0,
+    "views": {
+      "top": {
+        "source": "/home/hri/log/Robotic_arm/src/Cerebellum/calibration/results/eye_to_hand_top_20260919_231556_892978.yaml",
+        "K": [
+          [
+            431.51947021484375,
+            0.0,
+            311.3725280761719
+          ],
+          [
+            0.0,
+            430.9231262207031,
+            241.9923553466797
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          -0.05392823368310928,
+          0.053944069892168045,
+          -0.0002458607195876539,
+          0.0001836896553868428,
+          -0.017036978155374527
+        ],
+        "T_base_camera": [
+          [
+            0.9983089089753839,
+            -0.056950347140854556,
+            -0.01166105573756976,
+            0.4587495646732678
+          ],
+          [
+            -0.05676991525632261,
+            -0.9982706583824618,
+            0.01526005682941782,
+            0.14794580570647942
+          ],
+          [
+            -0.012509955322402944,
+            -0.01457225353825674,
+            -0.9998155582129375,
+            1.1402845471565608
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "front": {
+        "source": "/home/hri/log/Robotic_arm/src/Cerebellum/calibration/results/eye_to_hand_front_20260920_215202_484877.yaml",
+        "K": [
+          [
+            606.0810546875,
+            0.0,
+            327.5788879394531
+          ],
+          [
+            0.0,
+            605.1178588867188,
+            245.88775634765625
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "T_base_camera": [
+          [
+            -0.9599095301124309,
+            0.24196386725580132,
+            0.14151742275054333,
+            0.08021343262066039
+          ],
+          [
+            -0.1492397135642262,
+            -0.013794061936194278,
+            -0.9887048253905568,
+            0.7924719119275757
+          ],
+          [
+            -0.23727874303150404,
+            -0.9701872039961771,
+            0.04935166975366207,
+            0.21209447630542028
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "wrist": {
+        "source": "/home/hri/log/Robotic_arm/src/Cerebellum/calibration/results/eye_in_hand_wrist_20260919_224200_973331.yaml",
+        "K": [
+          [
+            606.0810546875,
+            0.0,
+            327.5788879394531
+          ],
+          [
+            0.0,
+            605.1178588867188,
+            245.88775634765625
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "T_tcp_camera": [
+          [
+            -0.023114518633473316,
+            -0.5179896173851347,
+            0.8550745437150755,
+            -0.056482420747866774
+          ],
+          [
+            -0.9986692201221031,
+            0.05140631082946874,
+            0.004144874861027573,
+            -0.0015089482319470583
+          ],
+          [
+            -0.04610322991995685,
+            -0.8538408209309906,
+            -0.5184885193549078,
+            0.10952635335543102
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "intrinsics_source": "front 640x480 color K approximation; wrist CameraInfo unavailable"
+      }
+    },
+    "limits": "Original extrinsics loaded directly from calibration YAML. Wrist K remains borrowed from front. Object preview registrations remain separate."
+  }
+}

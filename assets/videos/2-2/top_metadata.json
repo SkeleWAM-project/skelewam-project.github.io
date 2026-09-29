@@ -1,0 +1,73 @@
+{
+  "task": "2-2",
+  "view": "top",
+  "frames": 682,
+  "paper_keyframe_comparisons": [
+    {
+      "frame": 111,
+      "object_max_difference_px": 5.684341886080802e-14,
+      "robot_max_difference_px": 6.816201149943723
+    },
+    {
+      "frame": 255,
+      "object_max_difference_px": 5.684341886080802e-14,
+      "robot_max_difference_px": 1.0915278582126666
+    },
+    {
+      "frame": 396,
+      "object_max_difference_px": 5.684341886080802e-14,
+      "robot_max_difference_px": 3.268387328496015
+    },
+    {
+      "frame": 537,
+      "object_max_difference_px": 5.684341886080802e-14,
+      "robot_max_difference_px": 0.34298015888210975
+    },
+    {
+      "frame": 681,
+      "object_max_difference_px": 8.038873388460929e-14,
+      "robot_max_difference_px": 0.0011448074758569086
+    }
+  ],
+  "robot_qpos_delay_seconds": 0.12,
+  "block_motion_model": null,
+  "bowl_gap_corrections": [],
+  "full_frame_range": [
+    0,
+    681
+  ],
+  "stride": 1,
+  "source_hdf5": "/home/hri/log/Robotic_arm/src/Brain/record_demos/datasets/continuous/skelewam/2-2/replay_recorded/episode1_replay_20260922_225816.hdf5",
+  "object_source_counts": {
+    "drawer_slide_1-2_front_reference": 682,
+    "marker_14_minus_half_cabinet_height": 682
+  },
+  "limitations": "Per-view depth-estimated skeleton. Reprojection consistency does not establish physical accuracy of hidden joints or object depths.",
+  "fps": 29.163148674502775,
+  "source_estimates": "/home/hri/log/Robotic_arm/src/Brain/SkeleWAM/visualize/deal1/output/2-2",
+  "source_replay_directory": "/home/hri/log/Robotic_arm/src/Brain/record_demos/datasets/continuous/skelewam/2-2/replay_recorded",
+  "source_rgb": "original HDF5 observations/images/top; verified against same-index replay_recorded MP4",
+  "timing_method": "Fixed per-view visual delay shared by all tasks, q(image_timestamp-delay) interpolated in timestamp space, then URDF FK; no calibration YAML changes",
+  "camera_parameter_source": "/home/hri/log/Robotic_arm/src/Brain/SkeleWAM/visualize/deal1/output/robot_check/top_light_fit.json",
+  "paper_manifest": "/home/hri/log/Robotic_arm/src/Brain/SkeleWAM/visualize/deal1/imgs/manifest.json",
+  "videos": {
+    "2d": "top_2d.mp4",
+    "3d": "top_3d.mp4",
+    "2d3d": "top_2d3d.mp4"
+  },
+  "video_sizes": {
+    "2d": [
+      640,
+      480
+    ],
+    "3d": [
+      1280,
+      960
+    ],
+    "2d3d": [
+      1280,
+      480
+    ]
+  },
+  "rendered_frames": 682
+}
